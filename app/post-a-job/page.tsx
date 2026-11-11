@@ -52,37 +52,37 @@ export default function PostAJobPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-zinc-950 text-white flex items-center justify-center p-4">
-        <div className="max-w-lg w-full bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-2xl space-y-6">
+      <div className="min-h-screen bg-slate-50 text-slate-900 flex items-center justify-center p-4">
+        <div className="max-w-lg w-full bg-white border border-slate-200 rounded-2xl p-8 shadow-xl shadow-slate-200/50 space-y-6">
           <div className="text-center space-y-2">
             <span className="text-4xl">🎉</span>
-            <h1 className="text-2xl font-bold tracking-tight">Job Submitted Successfully!</h1>
-            <p className="text-sm text-zinc-400">
-              Your listing is currently <strong className="text-amber-400">Pending</strong> payment verification.
+            <h1 className="text-2xl font-bold tracking-tight text-slate-900">Job Submitted Successfully!</h1>
+            <p className="text-sm text-slate-600">
+              Your listing is currently <strong className="text-amber-600">Pending</strong> payment verification.
             </p>
           </div>
 
-          <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-4 space-y-2 text-center">
-            <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">Your Reference Code</span>
-            <div className="text-lg font-mono font-bold text-blue-400 select-all">{referenceCode}</div>
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-2 text-center">
+            <span className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Your Reference Code</span>
+            <div className="text-lg font-mono font-bold text-blue-600 select-all">{referenceCode}</div>
           </div>
 
-          <div className="space-y-3 text-sm text-zinc-300">
-            <h3 className="font-semibold text-white">Payment Instructions ($29 USD Fee):</h3>
-            <ul className="space-y-2 text-xs text-zinc-400 bg-zinc-950/50 p-4 rounded-xl border border-zinc-800/80">
-              <li>📱 <strong>M-Pesa (Buy Goods / Till No):</strong> Send equivalent to Till <code className="text-white">123456</code> and note your reference code.</li>
-              <li>🌍 <strong>PayPal:</strong> Send $29 to <code className="text-white">payments@regionaljobs.com</code></li>
-              <li>🏦 <strong>Bank Transfer:</strong> RegionalJobs Account - <code className="text-white">0123456789</code> (Bank XYZ)</li>
+          <div className="space-y-3 text-sm text-slate-700">
+            <h3 className="font-semibold text-slate-900">Payment Instructions ($29 USD Fee):</h3>
+            <ul className="space-y-2 text-xs text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <li>📱 <strong>M-Pesa (Buy Goods / Till No):</strong> Send equivalent to Till <code className="text-slate-900 font-bold">123456</code> and note your reference code.</li>
+              <li>🌍 <strong>PayPal:</strong> Send $29 to <code className="text-slate-900 font-bold">payments@regionaljobs.com</code></li>
+              <li>🏦 <strong>Bank Transfer:</strong> RegionalJobs Account - <code className="text-slate-900 font-bold">0123456789</code> (Bank XYZ)</li>
             </ul>
-            <p className="text-xs text-zinc-400 leading-relaxed pt-1">
-              Once paid, send your transaction confirmation receipt and reference code to <strong className="text-zinc-200">support@regionaljobs.com</strong>. Your job will go live on the homepage within 24 hours of verification!
+            <p className="text-xs text-slate-500 leading-relaxed pt-1">
+              Once paid, send your transaction confirmation receipt and reference code to <strong className="text-slate-800">support@regionaljobs.com</strong>. Your job will go live on the homepage within 24 hours of verification!
             </p>
           </div>
 
           <div className="pt-2">
             <Link 
               href="/" 
-              className="w-full block text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition text-sm shadow-lg shadow-blue-600/25"
+              className="w-full block text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition text-sm shadow-md shadow-blue-600/20"
             >
               Return to Home Feed
             </Link>
@@ -93,70 +93,70 @@ export default function PostAJobPage() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white py-12 px-4 flex items-center justify-center">
-      <div className="max-w-xl w-full bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-2xl space-y-6">
+    <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 flex items-center justify-center">
+      <div className="max-w-xl w-full bg-white border border-slate-200 rounded-2xl p-8 shadow-xl shadow-slate-200/50 space-y-6">
         
         <div className="space-y-2">
-          <Link href="/" className="text-xs text-blue-400 font-semibold uppercase tracking-wider hover:underline">
+          <Link href="/" className="text-xs text-blue-600 font-semibold uppercase tracking-wider hover:underline">
             ← Back to Home
           </Link>
-          <h1 className="text-2xl font-extrabold tracking-tight">Post a Remote Job ($29)</h1>
-          <p className="text-xs sm:text-sm text-zinc-400">
+          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">Post a Remote Job ($29)</h1>
+          <p className="text-xs sm:text-sm text-slate-500">
             Fill out your vacancy details below. Listings are activated upon payment verification.
           </p>
         </div>
 
         {error && (
-          <div className="p-3 bg-red-950/40 border border-red-800/60 text-red-200 text-xs rounded-xl">
+          <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl">
             {error}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-zinc-300 mb-1">Job Title</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1">Job Title</label>
             <input
               type="text"
               required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Senior React Developer"
-              className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm text-white placeholder-zinc-500 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition shadow-sm"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 mb-1">Company Name</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Company Name</label>
               <input
                 type="text"
                 required
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
                 placeholder="e.g. Acme Corp"
-                className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm text-white placeholder-zinc-500 outline-none transition"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition shadow-sm"
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 mb-1">Location / Region</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Location / Region</label>
               <input
                 type="text"
                 required
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 placeholder="e.g. Remote (East Africa)"
-                className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm text-white placeholder-zinc-500 outline-none transition"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition shadow-sm"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 mb-1">Job Type</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Job Type</label>
               <select
                 value={jobType}
                 onChange={(e) => setJobType(e.target.value)}
-                className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm text-white outline-none transition"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none transition shadow-sm"
               >
                 <option value="Full-time">Full-time</option>
                 <option value="Contract">Contract</option>
@@ -165,32 +165,32 @@ export default function PostAJobPage() {
               </select>
             </div>
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 mb-1">Salary Range (Optional)</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Salary Range (Optional)</label>
               <input
                 type="text"
                 value={salary}
                 onChange={(e) => setSalary(e.target.value)}
                 placeholder="e.g. $3,000 - $5,000 / mo"
-                className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm text-white placeholder-zinc-500 outline-none transition"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition shadow-sm"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-zinc-300 mb-1">Tech Stack (Comma separated)</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1">Tech Stack (Comma separated)</label>
             <input
               type="text"
               value={techStack}
               onChange={(e) => setTechStack(e.target.value)}
               placeholder="e.g. React, Node.js, TypeScript, Firebase"
-              className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm text-white placeholder-zinc-500 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition shadow-sm"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition text-sm shadow-lg shadow-blue-600/25 disabled:opacity-50 mt-4"
+            className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition text-sm shadow-md shadow-blue-600/20 disabled:opacity-50 mt-4 cursor-pointer"
           >
             {loading ? "Submitting Listing..." : "Submit Listing & View Payment Details ($29)"}
           </button>

@@ -142,23 +142,23 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
       
       {/* Background Ambient Glow */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/15 rounded-full blur-[128px] pointer-events-none"></div>
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-indigo-600/15 rounded-full blur-[128px] pointer-events-none"></div>
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-400/10 rounded-full blur-[128px] pointer-events-none"></div>
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-indigo-400/10 rounded-full blur-[128px] pointer-events-none"></div>
 
       <div className="max-w-md w-full relative z-10 my-8">
         
         {/* Header */}
         <div className="text-center mb-8">
-          <Link href="/" className="inline-block text-2xl font-black tracking-tight mb-3">
-            Regional<span className="text-blue-500">Jobs</span>
+          <Link href="/" className="inline-block text-2xl font-black tracking-tight mb-3 text-slate-900">
+            Regional<span className="text-blue-600">Jobs</span>
           </Link>
-          <h1 className="text-3xl font-extrabold tracking-tight text-white">
+          <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
             {isSignUp ? "Create an Account" : "Welcome Back"}
           </h1>
-          <p className="text-sm text-zinc-400 mt-2">
+          <p className="text-sm text-slate-500 mt-2">
             {isSignUp 
               ? "Select your role and enter your fresh credentials" 
               : "Select your role to load your saved credentials"}
@@ -166,21 +166,21 @@ export default function SignInPage() {
         </div>
 
         {/* Card */}
-        <div className="bg-zinc-900/85 backdrop-blur-xl border border-zinc-800/80 rounded-2xl p-8 shadow-2xl shadow-blue-500/5">
+        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-xl shadow-slate-200/50">
           
           {/* Role Selector */}
           <div className="mb-6">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">
-              1. Choose your role: <span className="text-blue-400">*</span>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
+              1. Choose your role: <span className="text-blue-600">*</span>
             </label>
-            <div className="grid grid-cols-2 gap-2 bg-zinc-950/80 p-1.5 rounded-xl border border-zinc-800">
+            <div className="grid grid-cols-2 gap-2 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
               <button
                 type="button"
                 onClick={() => handleRoleSelect("seeker")}
                 className={`py-2.5 px-3 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2 ${
                   role === "seeker"
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/20"
-                    : "text-zinc-400 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 <span>🔍</span> Job Seeker
@@ -191,7 +191,7 @@ export default function SignInPage() {
                 className={`py-2.5 px-3 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2 ${
                   role === "employer"
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/20"
-                    : "text-zinc-400 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 <span>🏢</span> Employer
@@ -201,7 +201,7 @@ export default function SignInPage() {
 
           {/* Error Alert */}
           {error && (
-            <div className="mb-6 p-3.5 bg-red-950/40 border border-red-800/60 text-red-200 text-xs font-medium rounded-xl flex items-start gap-2.5">
+            <div className="mb-6 p-3.5 bg-red-50 border border-red-200 text-red-700 text-xs font-medium rounded-xl flex items-start gap-2.5">
               <span className="text-base">⚠️</span>
               <span className="leading-relaxed">{error}</span>
             </div>
@@ -212,7 +212,7 @@ export default function SignInPage() {
             onClick={handleGoogleAuth}
             type="button"
             disabled={!role}
-            className="w-full mb-5 flex items-center justify-center gap-3 bg-zinc-950 hover:bg-zinc-800/80 border border-zinc-700/80 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-md group disabled:opacity-40"
+            className="w-full mb-5 flex items-center justify-center gap-3 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold py-3 px-4 rounded-xl transition-all shadow-sm group disabled:opacity-40"
           >
             <svg className="w-5 h-5 transition-transform group-hover:scale-105" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
@@ -224,15 +224,15 @@ export default function SignInPage() {
           </button>
 
           <div className="flex items-center my-5">
-            <div className="flex-grow border-t border-zinc-800"></div>
-            <span className="px-3 text-[11px] font-bold text-zinc-500 uppercase tracking-wider">Or with email</span>
-            <div className="flex-grow border-t border-zinc-800"></div>
+            <div className="flex-grow border-t border-slate-200"></div>
+            <span className="px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider">Or with email</span>
+            <div className="flex-grow border-t border-slate-200"></div>
           </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4" autoComplete="off">
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 mb-1.5">Email Address</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Email Address</label>
               <input
                 type="email"
                 required
@@ -242,13 +242,13 @@ export default function SignInPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete={isSignUp ? "off" : "username email"}
-                className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500 rounded-xl px-4 py-2.5 text-white text-sm placeholder-zinc-500 focus:outline-none transition shadow-inner disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 rounded-xl px-4 py-2.5 text-slate-900 text-sm placeholder-slate-400 focus:outline-none transition shadow-sm disabled:opacity-40 disabled:cursor-not-allowed"
                 placeholder={role ? "name@company.com" : "Please select a role above first..."}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 mb-1.5">Password</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Password</label>
               <input
                 type={passwordInputType}
                 required
@@ -264,7 +264,7 @@ export default function SignInPage() {
                   if (isSignUp) setPasswordInputType("password");
                 }}
                 autoComplete={isSignUp ? "new-password" : "current-password"}
-                className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500 rounded-xl px-4 py-2.5 text-white text-sm placeholder-zinc-500 focus:outline-none transition shadow-inner disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 rounded-xl px-4 py-2.5 text-slate-900 text-sm placeholder-slate-400 focus:outline-none transition shadow-sm disabled:opacity-40 disabled:cursor-not-allowed"
                 placeholder={role ? "••••••••" : "Please select a role above first..."}
               />
             </div>
@@ -272,7 +272,7 @@ export default function SignInPage() {
             <button
               type="submit"
               disabled={loading || !role}
-              className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition-all text-sm shadow-lg shadow-blue-600/25 disabled:opacity-40 disabled:cursor-not-allowed mt-2"
+              className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition-all text-sm shadow-md shadow-blue-600/20 disabled:opacity-40 disabled:cursor-not-allowed mt-2 cursor-pointer"
             >
               {loading 
                 ? "Processing..." 
@@ -285,14 +285,14 @@ export default function SignInPage() {
           </form>
 
           {/* Toggle Button */}
-          <div className="text-center mt-6 pt-5 border-t border-zinc-800/80">
+          <div className="text-center mt-6 pt-5 border-t border-slate-200">
             <button
               onClick={() => handleToggleMode(!isSignUp)}
               type="button"
-              className="text-xs text-zinc-400 hover:text-white transition font-medium"
+              className="text-xs text-slate-600 hover:text-slate-900 transition font-medium cursor-pointer"
             >
               {isSignUp ? "Already have an account? " : "Don't have an account? "}
-              <span className="text-blue-400 hover:underline font-semibold">
+              <span className="text-blue-600 hover:underline font-semibold">
                 {isSignUp ? "Sign In" : "Create one free"}
               </span>
             </button>
@@ -301,9 +301,9 @@ export default function SignInPage() {
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between text-xs text-zinc-500 mt-6 px-2">
+        <div className="flex items-center justify-between text-xs text-slate-500 mt-6 px-2">
           <span>🔒 256-bit Secure Encryption</span>
-          <Link href="/" className="hover:text-zinc-300 transition font-medium">
+          <Link href="/" className="hover:text-slate-800 transition font-medium">
             ← Back to Home
           </Link>
         </div>
