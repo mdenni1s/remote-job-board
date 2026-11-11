@@ -144,24 +144,24 @@ export default function SignInPage() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
       
-      {/* Background Ambient Glow */}
+      {/* Background Soft Ambient Accents */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-400/10 rounded-full blur-[128px] pointer-events-none"></div>
       <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-indigo-400/10 rounded-full blur-[128px] pointer-events-none"></div>
 
       <div className="max-w-md w-full relative z-10 my-8">
         
-        {/* Header */}
-        <div className="text-center mb-8">
-          <Link href="/" className="inline-block text-2xl font-black tracking-tight mb-3 text-slate-900">
+        {/* Header & Value Proposition */}
+        <div className="text-center mb-6 space-y-2">
+          <Link href="/" className="inline-block text-2xl font-black tracking-tight mb-2 text-slate-900">
             Regional<span className="text-blue-600">Jobs</span>
           </Link>
           <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
-            {isSignUp ? "Create an Account" : "Welcome Back"}
+            {isSignUp ? "Join Our Tech Network" : "Welcome Back"}
           </h1>
-          <p className="text-sm text-slate-500 mt-2">
+          <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto">
             {isSignUp 
-              ? "Select your role and enter your fresh credentials" 
-              : "Select your role to load your saved credentials"}
+              ? "Unlock elite regional remote roles or hire top-tier verified tech talent instantly." 
+              : "Sign in to access your customized dashboard and manage your workspace."}
           </p>
         </div>
 
@@ -171,13 +171,13 @@ export default function SignInPage() {
           {/* Role Selector */}
           <div className="mb-6">
             <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-              1. Choose your role: <span className="text-blue-600">*</span>
+              1. Select your account type: <span className="text-blue-600">*</span>
             </label>
             <div className="grid grid-cols-2 gap-2 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
               <button
                 type="button"
                 onClick={() => handleRoleSelect("seeker")}
-                className={`py-2.5 px-3 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2 ${
+                className={`py-2.5 px-3 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2 cursor-pointer ${
                   role === "seeker"
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/20"
                     : "text-slate-600 hover:text-slate-900"
@@ -188,7 +188,7 @@ export default function SignInPage() {
               <button
                 type="button"
                 onClick={() => handleRoleSelect("employer")}
-                className={`py-2.5 px-3 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2 ${
+                className={`py-2.5 px-3 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2 cursor-pointer ${
                   role === "employer"
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/20"
                     : "text-slate-600 hover:text-slate-900"
@@ -197,6 +197,12 @@ export default function SignInPage() {
                 <span>🏢</span> Employer
               </button>
             </div>
+            {role === "seeker" && (
+              <p className="text-[11px] text-emerald-600 font-medium mt-1.5 text-center">✨ Free unlimited browsing & 1-click applications.</p>
+            )}
+            {role === "employer" && (
+              <p className="text-[11px] text-blue-600 font-medium mt-1.5 text-center">🚀 Direct access to pre-vetted regional engineers.</p>
+            )}
           </div>
 
           {/* Error Alert */}
@@ -212,7 +218,7 @@ export default function SignInPage() {
             onClick={handleGoogleAuth}
             type="button"
             disabled={!role}
-            className="w-full mb-5 flex items-center justify-center gap-3 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold py-3 px-4 rounded-xl transition-all shadow-sm group disabled:opacity-40"
+            className="w-full mb-5 flex items-center justify-center gap-3 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold py-3 px-4 rounded-xl transition-all shadow-sm group disabled:opacity-40 cursor-pointer"
           >
             <svg className="w-5 h-5 transition-transform group-hover:scale-105" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
@@ -300,10 +306,10 @@ export default function SignInPage() {
 
         </div>
 
-        {/* Footer */}
-        <div className="flex items-center justify-between text-xs text-slate-500 mt-6 px-2">
+        {/* Footer Trust Badges */}
+        <div className="flex items-center justify-between text-xs text-slate-500 mt-6 px-2 font-medium">
           <span>🔒 256-bit Secure Encryption</span>
-          <Link href="/" className="hover:text-slate-800 transition font-medium">
+          <Link href="/" className="hover:text-slate-800 transition">
             ← Back to Home
           </Link>
         </div>

@@ -1,9 +1,21 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    font-size: 18px; /* Increased base font size for effortless readability */
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: #f8fafc; /* slate-50 */
     color: #0f172a; /* slate-900 */
-    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
   }
+}
+
+/* Accessibility & Focus States */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
 }
